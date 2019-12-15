@@ -22,7 +22,8 @@ Grey dark 3: #999
   --color-Grey-dark-1: #333;
   --color-Grey-dark-2: #777;
   --color-Grey-dark-3: #999;
-  --shadow-dark: rgba(0,0,0,.3); }
+  --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+  --shadow-light: 0 2rem 5rem rgba(0,0,0,.1); }
 
 * {
   margin: 0;
@@ -179,13 +180,123 @@ body {
     display: block; }
 
 .overview {
-  display: flex; }
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-Grey-light-4); }
+  .overview_heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    padding: 1.5rem 3rem;
+    letter-spacing: 1px; }
   .overview_stars {
-    margin-right: auto; }
+    margin-right: auto;
+    display: flex; }
   .overview_icon-star, .overview_icon-location {
     width: 1.75rem;
     height: 1.7rem;
     fill: var(--color-prinary); }
+  .overview_location {
+    display: flex;
+    vertical-align: center; }
+  .overview_icon-location {
+    margin-right: .5rem; }
+  .overview_rating {
+    background-color: var(--color-prinary);
+    color: #fff;
+    margin-left: 3rem;
+    align-self: stretch;
+    padding: 0 2.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  .overview_rating-averge {
+    font-size: 2.25rem;
+    font-weight: 300;
+    margin-bottom: -3px; }
+  .overview_rating-count {
+    font-size: 1rem; }
+
+.btn-inline {
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--color-prinary);
+  border-bottom: 1px solid currentColor;
+  background-color: transparent;
+  display: inline-block;
+  padding-bottom: 2px;
+  transition: all .2s; }
+  .btn-inline:hover {
+    color: var(--color-Grey-dark-2); }
+  .btn-inline:focus {
+    outline: none;
+    animation: pulsar 1s infinite; }
+
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25); }
+  100% {
+    transform: scale(1);
+    box-shadow: none; } }
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem; }
+
+.list {
+  list-style: none;
+  border-top: 1px solid var(--color-Grey-light-4);
+  border-bottom: 1px solid var(--color-Grey-light-4);
+  margin: 3rem 0;
+  padding: 3rem 0;
+  display: flex;
+  flex-wrap: wrap; }
+  .list_item {
+    flex: 0 0 50%;
+    margin-bottom: .7rem; }
+  .list_item::before {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin-right: .7rem;
+    background-color: var(--color-prinary);
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover; }
+
+.recomend {
+  font-size: 1.3rem;
+  color: var(--color-Grey-dark-3);
+  display: flex;
+  align-items: center; }
+  .recomend_count {
+    margin-right: auto; }
+  .recomend_photo {
+    box-sizing: content-box;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff; }
+    .recomend_photo:not(:last-child) {
+      margin-right: -1.15rem; }
+
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem; }
+  .review_text {
+    font-size: 1.4rem; }
+  .review_photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%; }
 
 .container {
   max-width: 120rem;
@@ -198,7 +309,7 @@ body {
   font-size: 1.4rem;
   height: 7rem;
   background-color: #fff;
-  border-bottom: var(--color-Grey-light-2);
+  border-bottom: 1px solid var(--color-Grey-light-4);
   display: flex;
   justify-content: space-between;
   align-items: center; }
@@ -214,5 +325,22 @@ body {
   justify-content: space-between; }
 
 .hotel-view {
-  flex: 1;
-  height: 80rem; }
+  background-color: #fff;
+  flex: 1; }
+
+.detail {
+  font-size: 1.4rem;
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-Grey-light-3);
+  border-bottom: 1px solid var(--color-Grey-light-4); }
+
+.description {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-right: 4.5rem;
+  flex: 0 0 60%; }
+
+.user-reviews {
+  flex: 1; }
